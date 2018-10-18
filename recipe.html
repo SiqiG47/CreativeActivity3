@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.js"></script>
+    <script src="recipe.js"></script>
+</head>
+
+<body id="body-style-one">
+    <section class="page">
+            <h1>Recipe Recommendation</h1>
+            
+        <section id="search">
+            <div ng-app="app" ng-controller="ctrl" class="section-body">
+
+                <form ng-submit="submitButton()">
+                    <h3>Enter a major Ingredient: <input type="text" ng-model="form"></input>
+                    <button type="submit">Submit</button>
+                    </h3>
+                    
+                    
+                </form>
+                <img ng-src="{{info.image}}" />
+                <h3>Label: {{info.label}}</h3>
+                <br>
+                <h3>ingredients: {{info.ingredientLines}}</h3>
+            </div>
+
+        </section>
+
+</body>
+
+</html>
