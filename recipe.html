@@ -6,7 +6,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.js"></script>
     <script src="recipe.js"></script>
 </head>
-
+<center>
 <body id="body-style-one">
     <section class="page">
             <h1>Recipe Recommendation</h1>
@@ -15,21 +15,20 @@
             <div ng-app="app" ng-controller="ctrl" class="section-body">
 
                 <form ng-submit="submitButton()">
-                    <h3>Enter a major Ingredient: <input type="text" ng-model="form"></input>
+                    <h3>Enter a major ingredient: <input type="text" ng-model="form"></input>
                     <button type="submit">Submit</button>
                     </h3>
                     <p>(hint: Chicken) </p>
                     
-                    
                 </form>
                 <img ng-src="{{info.image}}" />
-                <h3>Label: {{info.label}}</h3>
+                <h3>Name: {{info.label}}</h3>
                 <h3>Calories: {{info.calories}}</h3>
-                <h3>ingredients: {{info.ingredientLines}}</h3>
+                <h3>Ingredients: {{info.ingredientLines}}</h3>
             </div>
 
         </section>
 
 </body>
-
+</center>
 </html>

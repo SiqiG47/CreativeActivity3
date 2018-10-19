@@ -6,12 +6,14 @@ app.controller('ctrl',
         $scope.submitButton = function(){
             console.log($scope.form);
             var form = $scope.form;
-            var url = "https://api.edamam.com/search?q=" + form + "&app_id=f239ae2e&app_key=437bd4f3b3832a1b54f88e5fb6cd8984&from=0&to=1" ;
+            var url = "https://api.edamam.com/search?q=" + form + "&app_id=f239ae2e&app_key=437bd4f3b3832a1b54f88e5fb6cd8984&from=0&to=90" ;
             $http.get(url).then(function(response){
                 console.log(response);
-                $scope.info = response.data['hits'][0]['recipe'];
+                var count = Math.min(response.data.count, 90);
+                var random = Math.floor(Math.random() * count);
+                $scope.info = response.data['hits'][random]['recipe'];
+                $scope.info.calories = Math.floor($scope.info.calories);
             });
-
         }
     }
 );
